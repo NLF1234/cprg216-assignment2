@@ -28,4 +28,22 @@ def run_add(students):
         if again not in ("y", "yes"):
             break
 
+# Main Search Operation
+def run_search(students):
+    """Handle the search process until the user enters -1 to return."""
+    while True:
+        student_id = input_int(
+            "Enter the id of the student. Enter -1 to return to the previous menu: ",
+            accept_neg1=True
+        )
+
+        if student_id == -1:
+            return
+
+        result = search(students, student_id)
+        if result:
+            print("Student found")
+            print(student_id, result["name"], result["gpa"])
+        else:
+            print("Student not found")
 
