@@ -47,3 +47,25 @@ def run_search(students):
         else:
             print("Student not found")
 
+# Main Edit Operation
+def run_edit(students):
+    """Allow the user to edit a student's name using their ID."""
+    while True:
+        student_id = input_int(
+            "Enter the id of the student. Enter -1 to return to the previous menu: ",
+            accept_neg1=True
+        )
+
+        if student_id == -1:
+            return
+
+        result = search(students, student_id)
+        if not result:
+            print("Student not found")
+            continue
+
+        new_name = input_nonempty("Enter the new name of the student: ")
+        edit_name(students, student_id, new_name)
+
+        print(f"Student name modified for the student with id {student_id}")
+        print("Student's new name is", new_name)
