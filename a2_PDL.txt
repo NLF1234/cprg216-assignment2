@@ -1,0 +1,214 @@
+PROGRAM StudentRecordProgram
+
+    DISPLAY welcome message
+
+    CREATE an empty dictionary called students
+
+    WHILE user has not chosen to exit
+
+        CALL show_menu to display the main menu
+        GET the user’s menu choice
+
+        IF the user chooses "1" (Search)
+            CALL run_search with the students dictionary
+
+        ELSE IF the user chooses "2" (Edit Name)
+            CALL run_edit with the students dictionary
+
+        ELSE IF the user chooses "3" (Add Student)
+            CALL run_add with the students dictionary
+
+        ELSE IF the user chooses "4" (Remove Student)
+            CALL run_remove with the students dictionary
+
+        ELSE
+            DISPLAY "Invalid option"
+
+        PROMPT user to continue or exit
+
+    END WHILE
+
+    DISPLAY "Goodbye"
+
+END PROGRAM
+
+
+---------------------------------------------------------
+FUNCTION run_search(students)
+
+    REPEAT
+        PROMPT user for a student ID (allow -1 to return)
+
+        IF the user enters -1
+            RETURN to main program
+
+        CALL search to find matching record
+
+        IF the record exists
+            DISPLAY the student's ID, name, GPA, and semester
+        ELSE
+            DISPLAY "Student not found"
+
+    END REPEAT
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION run_edit(students)
+
+    REPEAT
+        PROMPT user for a student ID (allow -1 to return)
+
+        IF the user enters -1
+            RETURN
+
+        IF the ID does not exist in students
+            DISPLAY "No student with that ID"
+            CONTINUE loop
+
+        PROMPT user for the new student name
+        CALL edit_name to update the record
+        DISPLAY confirmation
+
+    END REPEAT
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION run_add(students)
+
+    REPEAT
+        PROMPT user for a student ID (allow -1)
+
+        IF user enters -1
+            RETURN
+
+        IF the ID already exists
+            DISPLAY the existing record
+            ASK if user wants to overwrite
+            IF user says no
+                RETURN
+
+        PROMPT for name, GPA, and semester
+        CALL add to save or update the record
+        DISPLAY confirmation
+
+        ASK user if they want to add another student
+
+    UNTIL user chooses not to continue
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION run_remove(students)
+
+    REPEAT
+        PROMPT user for a student ID (allow -1)
+
+        IF the user enters -1
+            RETURN
+
+        CALL remove to attempt deletion
+
+        IF remove returned True
+            DISPLAY "Student removed"
+        ELSE
+            DISPLAY "No student with that ID"
+
+        ASK user if they want to remove another student
+
+    UNTIL user chooses not to continue
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION input_int(prompt, allow_negative_one)
+
+    REPEAT
+        ASK the user to enter a value
+
+        IF allow_negative_one AND user typed "-1"
+            RETURN -1
+
+        IF the value is a valid integer
+            RETURN the integer value
+
+        OTHERWISE display an error message
+
+    END REPEAT
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION input_float(prompt)
+
+    REPEAT
+        ASK user for a GPA value
+
+        IF the value is a valid float AND between 0.0 and 4.0
+            RETURN the value
+
+        OTHERWISE display error
+
+    END REPEAT
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION input_nonempty(prompt)
+
+    REPEAT
+        GET text from user
+
+        IF text is not empty
+            RETURN the text
+
+        OTHERWISE display "Input cannot be empty"
+
+    END REPEAT
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION add(students, id, name, gpa, semester)
+
+    STORE the record in the students dictionary
+        (overwrite if it already exists)
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION search(students, id)
+
+    RETURN the matching student record
+    OR return None if not found
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION remove(students, id)
+
+    IF id exists in the dictionary
+        DELETE that record
+        RETURN True
+    ELSE
+        RETURN False
+
+END FUNCTION
+
+
+---------------------------------------------------------
+FUNCTION edit_name(students, id, new_name)
+
+    UPDATE the record’s name field
+
+END FUNCTION
