@@ -75,5 +75,5 @@ The main program (`assignment2.py`) displays the menu and calls the appropriate 
 ## Notes
 
 * No external libraries are required.
-* The program uses simple Python features appropriate for academic assignment use.
+* The program uses simple Python features appropriate for the subject matter taught at this level
 * Files are structured to keep the logic clear and maintainable.
