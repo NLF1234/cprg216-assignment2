@@ -1,0 +1,88 @@
+Welcome to the Student Record Program!
+What would you like to do today?
+- Find a student? Enter 1
+- Edit a student's name? Enter 2
+- Add a new student? Enter 3
+- Remove a student? Enter 4
+3
+Enter the student ID (-1 to return):
+123
+Enter the name:
+Emy Wang
+Enter the GPA (0.0 to 4.0):
+3.4
+Enter the semester:
+3
+Student added.
+Add another student? (y/n):
+y
+Enter the student ID (-1 to return):
+124
+Enter the name:
+Jimmy Clark
+Enter the GPA (0.0 to 4.0):
+3.2
+Enter the semester:
+4
+Student added.
+Add another student? (y/n):
+y
+Enter the student ID (-1 to return):
+125
+Enter the name:
+John Doe
+Enter the GPA (0.0 to 4.0):
+2.8
+Enter the semester:
+2
+Student added.
+Add another student? (y/n):
+n
+Continue (y/yes) or exit (n/no)?
+y
+What would you like to do today?
+- Find a student? Enter 1
+- Edit a student's name? Enter 2
+- Add a new student? Enter 3
+- Remove a student? Enter 4
+1
+Enter the student ID (-1 to return):
+123
+Student found:
+ID: 123
+Name: Emy Wang
+GPA: 3.4
+Semester: 3
+Enter the student ID (-1 to return):
+-1
+Continue (y/yes) or exit (n/no)?
+y
+What would you like to do today?
+- Find a student? Enter 1
+- Edit a student's name? Enter 2
+- Add a new student? Enter 3
+- Remove a student? Enter 4
+2
+Enter the student ID (-1 to return):
+123
+Enter the new name:
+Sarah Wang
+Student name updated.
+Enter the student ID (-1 to return):
+-1
+Continue (y/yes) or exit (n/no)?
+y
+What would you like to do today?
+- Find a student? Enter 1
+- Edit a student's name? Enter 2
+- Add a new student? Enter 3
+- Remove a student? Enter 4
+4
+Enter the student ID (-1 to return):
+123
+Student removed.
+Remove another student? (y/n):
+n
+Continue (y/yes) or exit (n/no)?
+n
+Goodbye!
