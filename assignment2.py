@@ -69,3 +69,19 @@ def run_edit(students):
 
         print(f"Student name modified for the student with id {student_id}")
         print("Student's new name is", new_name)
+
+# Main Remove Operation
+def run_remove(students):
+    """Remove students until the user chooses to stop."""
+    while True:
+        print("Enter id of the student that you want to remove from the students' registry.")
+        student_id = input_int("id: ")
+
+        if remove(students, student_id):
+            print("Student removed")
+        else:
+            print("Student not found")
+
+        again = input("Do you want to remove more students? y(yes)/n(no) ").strip().lower()
+        if again not in ("y", "yes"):
+            break
