@@ -85,3 +85,14 @@ def run_remove(students):
         again = input("Do you want to remove more students? y(yes)/n(no) ").strip().lower()
         if again not in ("y", "yes"):
             break
+
+# Menu Function
+def show_menu():
+    """Display the main menu and return the user's choice."""
+    print("What would you like to do today?")
+    print("-Find a student? enter 1")
+    print("-edit a student's info using student ID? enter 2")
+    print("-Add a new student? enter 3")
+    print("-Remove a student? enter 4")
+
+    return input("Enter your choice: ").strip()
